@@ -14,16 +14,16 @@ Projeto feito em ReactJS, NodeJS e Mysql que busca entender a fundo como funcion
 
 O projeto em questão faz uso de:
 
-* [![axios][axios]
-* [reactstrap][reactstrap]
-* [bootstrap][bootstrap]
-* [bcrypt][bcrypt]
-* [cors][cors]
-* [express][express]
-* [jwt][jwt]
-* [nodemon][nodemon]
-* [mysql2][mysql2]
-* [sequelize][sequelize]
+* ![axios][axios]
+* ![reactstrap][reactstrap]
+* ![bootstrap][bootstrap]
+* ![bcrypt][bcrypt]
+* ![cors][cors]
+* ![express][express]
+* ![jwt][jwt]
+* ![nodemon][nodemon]
+* ![mysql2][mysql2]
+* ![sequelize][sequelize]
 
 ---
 
