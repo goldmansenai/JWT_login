@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 
 function Register() {
   const [username, setUsername] = useState("");
@@ -18,7 +19,7 @@ function Register() {
   return (
     <div>
       <h1>Register Page</h1>
-      <form>
+      {/* <form>
         <label>Usuário:</label>
         <input
           onChange={(e) => {
@@ -32,7 +33,30 @@ function Register() {
           }}
         />
         <button onClick={registrar}>Cadastrar</button>
-      </form>
+      </form> */}
+      <Form inline>
+        <FormGroup floating>
+          <Input
+            placeholder="Username"
+            type="text"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+          />
+          <Label for="exampleEmail">Usuário</Label>
+        </FormGroup>
+        <FormGroup floating>
+          <Input
+            placeholder="Password"
+            type="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+          <Label for="examplePassword">Senha</Label>
+        </FormGroup>
+        <Button onClick={registrar}>Cadastrar</Button>
+      </Form>
     </div>
   );
 }

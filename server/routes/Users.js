@@ -12,6 +12,8 @@ router.post("/register", async (req, res) => {
 
   if (userObject?.dataValues.username === req.body.username) {
     res.send("Usuário já existe");
+  } else if (username === "" || password === "") {
+    res.send("Usuário ou senha não podem estar em branco!");
   } else {
     const user = db.sequelize.models.Users.create({
       username: username,
