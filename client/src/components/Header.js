@@ -8,6 +8,7 @@ import {
   NavLink,
   NavbarToggler,
   Collapse,
+  Button,
 } from "reactstrap";
 
 function Header() {
@@ -26,18 +27,37 @@ function Header() {
           onClick={function noRefCheck() {}}
         />
         <Collapse navbar id="responsive-navbar-nav">
-          <Nav className="me-auto" navbar>
-            <NavItem>
-              <NavLink href="/register">Registrar</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/login">Login</NavLink>
-            </NavItem>
-          </Nav>
+          {obj === null && (
+            <Nav className="me-auto" navbar>
+              <NavItem>
+                <NavLink href="/register">Registrar</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/login">Login</NavLink>
+              </NavItem>
+            </Nav>
+          )}
+          {obj !== null && (
+            <Nav className="me-auto" navbar>
+              <NavItem>
+                <NavLink href="/register" disabled>
+                  Registrar
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/login" disabled>
+                  Login
+                </NavLink>
+              </NavItem>
+            </Nav>
+          )}
           <NavbarText>
             {obj?.username && (
-              <div>
-                {obj?.username} <button onClick={logout}>Logout</button>
+              <div className="d-flex align-items-start">
+                <h3 className="mx-2">
+                  <b>{obj?.username}</b>
+                </h3>
+                <Button onClick={logout}>Logout</Button>
               </div>
             )}
           </NavbarText>

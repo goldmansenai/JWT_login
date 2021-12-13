@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import Card from "../components/Card";
 
 function Home() {
   const obj = JSON.parse(localStorage.getItem("user"));
@@ -9,17 +11,21 @@ function Home() {
 
   const criar = () => {
     const data = { title: titulo, postText: post, username: obj?.username };
-    axios
-      .post("http://localhost:3001/posts", data, {
-        headers: { accessToken: localStorage.getItem("accessToken") },
-      })
-      .then((response) => {
-        if (response.data.error) {
-          alert(response.data.error);
-        } else {
-          alert("Post Criado");
-        }
-      });
+    if (titulo === "" || post === "") {
+      alert("O post não pode ter campos em branco!");
+    } else {
+      axios
+        .post("http://localhost:3001/posts", data, {
+          headers: { accessToken: localStorage.getItem("accessToken") },
+        })
+        .then((response) => {
+          if (response.data.error) {
+            alert(response.data.error);
+          } else {
+            window.location.reload(true);
+          }
+        });
+    }
   };
 
   useEffect(() => {
@@ -29,38 +35,50 @@ function Home() {
   }, []);
   return (
     <div>
-      <h1>Home Page</h1>
-      <div>
-        <h2>Seja bem-vindo! {obj?.username}</h2>
+      <div className="d-flex justify-content-center align-items-baseline">
+        <h2>Seja bem-vindo! </h2>
+        <h1 className="px-2">
+          <b>{obj?.username}</b>
+        </h1>
       </div>
-      {!obj?.username && <h2>Você não esta logado</h2>}
+      {!obj?.username && <h2>Você não está logado</h2>}
       {obj?.username && (
         <div>
           <h2>Crie um post</h2>
           <div>
-            <form>
-              <label>Título</label>
-              <input
-                onChange={(e) => {
-                  setTitulo(e.target.value);
-                }}
-              />
-              <label>Post</label>
-              <input
-                onChange={(e) => {
-                  setPost(e.target.value);
-                }}
-              />
-              <button onClick={criar}>Criar</button>
-            </form>
+            <Form inline>
+              <FormGroup floating>
+                <Input
+                  placeholder="Titulo"
+                  type="text"
+                  onChange={(e) => {
+                    setTitulo(e.target.value);
+                  }}
+                />
+                <Label>Título</Label>
+              </FormGroup>
+              <FormGroup floating>
+                <Input
+                  placeholder="Conteudo"
+                  type="text"
+                  onChange={(e) => {
+                    setPost(e.target.value);
+                  }}
+                />
+                <Label>Conteúdo</Label>
+              </FormGroup>
+              <Button onClick={criar}>Criar</Button>
+            </Form>
           </div>
           <div>
-            {listPosts.map((value, key) => {
+            {listPosts.map((value) => {
               return (
                 <div key={value.id}>
-                  <div>{value.title}</div>
-                  <div>{value.postText}</div>
-                  <div>{value.username}</div>
+                  <Card
+                    titulo={value.title}
+                    texto={value.postText}
+                    usuario={value.username}
+                  />
                 </div>
               );
             })}

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const { sign } = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 
 router.post("/register", async (req, res) => {
   const { username, password } = req.body;
@@ -15,9 +16,11 @@ router.post("/register", async (req, res) => {
   } else if (username === "" || password === "") {
     res.send("Usuário ou senha não podem estar em branco!");
   } else {
-    const user = db.sequelize.models.Users.create({
-      username: username,
-      password: password,
+    bcrypt.hash(password, 10).then((hash) => {
+      db.sequelize.models.Users.create({
+        username: username,
+        password: hash,
+      });
     });
     res.json("Usuário criado com sucesso!");
   }
@@ -31,19 +34,21 @@ router.post("/login", async (req, res) => {
   });
 
   if (!user) {
-    res.send("Usuário não existe!");
+    res.json({ message: "Usuário não existe!" });
   }
 
-  if (password !== user.password || username !== user.username) {
-    res.send("Usuário ou senha errados!");
-    return;
-  }
-
-  const accessToken = sign(
-    { username: user.username, id: user.id },
-    "mySecret"
-  );
-  res.json({ token: accessToken, username: username, id: user.id });
+  bcrypt.compare(password, user.password).then((match) => {
+    if (!match) {
+      res.json({ message: "Usuário ou senha errados!" });
+      return;
+    } else {
+      const accessToken = sign(
+        { username: user.username, id: user.id },
+        "mySecret"
+      );
+      res.json({ token: accessToken, username: username, id: user.id });
+    }
+  });
 });
 
 module.exports = router;
