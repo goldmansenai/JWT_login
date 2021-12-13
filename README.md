@@ -1,8 +1,8 @@
 # Login-JWT
-[Versão do Projeto][version]
-[Front][react]
-[Back][node]
-[Database][db]
+![Versão do Projeto][version]
+![Front][react]
+![Back][node]
+![Database][db]
 
 > Sistema de login com autenticação JWT
 
