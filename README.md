@@ -14,7 +14,7 @@ Projeto feito em ReactJS, NodeJS e Mysql que busca entender a fundo como funcion
 
 O projeto em questão faz uso de:
 
-* [axios][axios]
+* [![axios][axios]
 * [reactstrap][reactstrap]
 * [bootstrap][bootstrap]
 * [bcrypt][bcrypt]
