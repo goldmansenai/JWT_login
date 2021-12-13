@@ -1,5 +1,8 @@
 # Login-JWT
-Versão do projeto - Frontend/React - Backend/NodeJS - Database/MySQL
+[![Versão do Projeto][version]]
+[![Front][react]]
+[![Back][node]]
+[![Database][db]]
 
 > Sistema de login com autenticação JWT
 
@@ -11,16 +14,16 @@ Projeto feito em ReactJS, NodeJS e Mysql que busca entender a fundo como funcion
 
 O projeto em questão faz uso de:
 
-* Axios
-* Reactstrap
-* Bootstrap
-* Bcrypt
-* Cors
-* Express
-* JWT
-* MySQL2
-* Nodemon
-* Sequelize
+* [![axios][axios]]
+* [![reactstrap][reactstrap]]
+* [![bootstrap][bootstrap]]
+* [![bcrypt][bcrypt]]
+* [![cors][cors]]
+* [![express][express]]
+* [![jwt][jwt]]
+* [![mysql2][mysql2]]
+* [![nodemon][nodemon]]
+* [![sequelize][sequelize]]
 
 ---
 
@@ -46,7 +49,21 @@ Entre na pasta do front-end e baixe os pacotes
 cd client && npm install
 ```
 
-Assim que o npm terminar de instalar os pacotes, rode o cliente com: 
+Assim que o npm terminar de instalar os pacotes, você precisa configurar seu MySQL Workbench antes que possa rodar o projeto, para isso, veja abaixo uma sequência de imagens que podem ser úteis: 
+<p>Passo 1:</p>
+<img src="./assets/mysql1.PNG"/>
+<p>Passo 2:</p>
+<img src="./assets/mysql2.PNG"/>
+<p>Passo 3:</p>
+<img src="./assets/mysql3.PNG"/>
+<p>Passo 4:</p>
+<img src="./assets/mysql4.PNG"/>
+<p>Passo 5:</p>
+<img src="./assets/mysql5.PNG"/>
+<p>Passo 6:</p>
+<img src="./assets/mysql6.PNG"/>
+
+Com o banco conectado rode o cliente com:
 ```
 npm start
 ```
@@ -83,3 +100,17 @@ cd login\back-end && npm run start
 * *Vinícius Sanches*
 
 <!-- Imagens e Links -->
+[version]: https://img.shields.io/badge/Version-1.0.0-brightgreen?style=for-the-badge&logo=appveyor
+[react]: https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge
+[node]: https://img.shields.io/badge/Backend-Node-important?style=for-the-badge
+[db]: https://img.shields.io/badge/Database-Mysql-9cf?style=for-the-badge
+[axios]: https://img.shields.io/badge/Front-Axios-blue?style=for-the-badge
+[reactstrap]: https://img.shields.io/badge/Front-Reactstrap-blue?style=for-the-badge
+[bootstrap]: https://img.shields.io/badge/Front-Bootstrap-blue?style=for-the-badge
+[bcrypt]: https://img.shields.io/badge/Back-Bcrypt-important?style=for-the-badge
+[cors]: https://img.shields.io/badge/Back-cors-important?style=for-the-badge
+[express]: https://img.shields.io/badge/Back-express-important?style=for-the-badge
+[jwt]: https://img.shields.io/badge/Back-jwt-important?style=for-the-badge
+[nodemon]: https://img.shields.io/badge/Back-nodemon-important?style=for-the-badge
+[mysql2]: https://img.shields.io/badge/DB-Mysql2-9cf?style=for-the-badge
+[sequelize]: https://img.shields.io/badge/DB-Sequelize-9cf?style=for-the-badge
