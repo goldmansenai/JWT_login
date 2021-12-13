@@ -1,8 +1,8 @@
 # Login-JWT
-[![Versão do Projeto][version]]
-[![Front][react]]
-[![Back][node]]
-[![Database][db]]
+[Versão do Projeto][version]
+[Front][react]
+[Back][node]
+[Database][db]
 
 > Sistema de login com autenticação JWT
 
@@ -14,16 +14,16 @@ Projeto feito em ReactJS, NodeJS e Mysql que busca entender a fundo como funcion
 
 O projeto em questão faz uso de:
 
-* [![axios][axios]]
-* [![reactstrap][reactstrap]]
-* [![bootstrap][bootstrap]]
-* [![bcrypt][bcrypt]]
-* [![cors][cors]]
-* [![express][express]]
-* [![jwt][jwt]]
-* [![mysql2][mysql2]]
-* [![nodemon][nodemon]]
-* [![sequelize][sequelize]]
+* [axios][axios]
+* [reactstrap][reactstrap]
+* [bootstrap][bootstrap]
+* [bcrypt][bcrypt]
+* [cors][cors]
+* [express][express]
+* [jwt][jwt]
+* [nodemon][nodemon]
+* [mysql2][mysql2]
+* [sequelize][sequelize]
 
 ---
 
@@ -51,17 +51,17 @@ cd client && npm install
 
 Assim que o npm terminar de instalar os pacotes, você precisa configurar seu MySQL Workbench antes que possa rodar o projeto, para isso, veja abaixo uma sequência de imagens que podem ser úteis: 
 <p>Passo 1:</p>
-<img src="./assets/mysql1.PNG"/>
+<img src="./assets/mysql1.png"/>
 <p>Passo 2:</p>
-<img src="./assets/mysql2.PNG"/>
+<img src="./assets/mysql2.png"/>
 <p>Passo 3:</p>
-<img src="./assets/mysql3.PNG"/>
+<img src="./assets/mysql3.png"/>
 <p>Passo 4:</p>
-<img src="./assets/mysql4.PNG"/>
+<img src="./assets/mysql4.png"/>
 <p>Passo 5:</p>
-<img src="./assets/mysql5.PNG"/>
+<img src="./assets/mysql5.png"/>
 <p>Passo 6:</p>
-<img src="./assets/mysql6.PNG"/>
+<img src="./assets/mysql6.png"/>
 
 Com o banco conectado rode o cliente com:
 ```
